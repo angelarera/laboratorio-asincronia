@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Personajes de Mortadelo y Filemón</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="titulo-principal">Personajes de Mortadelo y Filemón</h1>
+      <form class="buscador">
+        <input
+          class="buscador__input"
+          type="search"
+          arial-label="Filtrar personajes"
+        />
+        <button type="submit">Filtrar</button>
+      </form>
+      <div class="listado-personajes" id="listado-personajes"></div>
+    </main>
+    <script
+      type="module"
+      src="personajes-listado/personajes-listado.ts"
+    ></script>
+    <script
+      type="module"
+      src="personajes-filtrar/personajes-filtrar.ts"
+    ></script>
+  </body>
+</html>
