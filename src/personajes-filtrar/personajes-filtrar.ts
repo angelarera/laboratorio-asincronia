@@ -1,5 +1,5 @@
 import { filtrarPersonajes } from "./personajes-filtrar.api";
-import { crearContenedorPersonaje } from "../personajes-listado/personajes-listado";
+import { crearContenedorPersonaje } from "../personajes.helpers";
 
 const limpiarListadoPersonajes = () => {
   const listado = document.querySelector(".listado-personajes");
@@ -25,7 +25,7 @@ const pintarPersonajeFiltrado = async (nombre: string) => {
   }
 };
 
-const manejarFiltradoPersonaje = async (evento: Event) => {
+export const manejarFiltradoPersonaje = async (evento: Event) => {
   evento.preventDefault();
 
   const inputBuscador = document.querySelector(".buscador__input");
@@ -37,11 +37,3 @@ const manejarFiltradoPersonaje = async (evento: Event) => {
     await pintarPersonajeFiltrado(nombreBuscado);
   }
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-  const buscador = document.querySelector(".buscador");
-
-  if (buscador && buscador instanceof HTMLFormElement) {
-    buscador.addEventListener("submit", manejarFiltradoPersonaje);
-  }
-});
